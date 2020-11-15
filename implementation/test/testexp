@@ -1,0 +1,66 @@
+#include "unity.h"
+#include "unity_internals.h"
+#include "functions.h"
+typedef struct
+{
+ float ri;
+ float wh;
+ float su;
+ float dh;
+}rate;
+struct type1
+{   float wheat;
+    float sugar;
+    float balwheat1;
+    float balsugar1;
+};
+struct type2
+{  float rice2;
+   float sugar2;
+   float dhal2;
+   float wheat2;
+   float balrice2;
+   float balsugar2;
+   float baldhal2;
+   float balwheat2;
+};
+
+typedef struct {
+	char headname[25];
+	int adultcount;
+	int childrencount;
+	int annualincome;
+	char mobile_no[20];
+	char street[50];
+	char city[50];
+	char acct_type;
+	struct type1 white_card;
+	struct type2 green_card;
+	char day[50];
+}account;
+
+account consumer={"raj",2,1,100000,"1234567890","sb colony","mettupalayam"};
+rate price;
+
+void test_greencard(void)
+{
+greencalc();
+TEST_ASSERT_EQUAL(7.5,consumer.green_card.rice2);
+TEST_ASSERT_EQUAL(5.0,consumer.green_card.wheat2);
+TEST_ASSERT_EQUAL(3.0,consumer.green_card.sugar2);
+TEST_ASSERT_EQUAL(2.5,consumer.green_card.dhal2);
+}
+void test_whitecard(void)
+{
+whitecalc();
+TEST_ASSERT_EQUAL(5.0,consumer.white_card.wheat);
+TEST_ASSERT_EQUAL(2.5,consumer.white_card.sugar);
+}
+
+int main(void)
+{
+UNITY_BEGIN();
+RUN_TEST(test_greencard);
+RUN_TEST(test_whitecard);
+return UNITY_END();
+}
