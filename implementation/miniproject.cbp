@@ -32,14 +32,14 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="cons.txt" />
-		<Unit filename="functions.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="functions.h" />
+		<Unit filename="inc/functions.h" />
 		<Unit filename="maincode.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="price.txt" />
+		<Unit filename="src/functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
